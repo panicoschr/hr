@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<extension type="package" version="3.0" method="upgrade">
+<name>MEPRO Human Resource</name>
+<author>MEPRO SOFTWARE SOLUTIONS</author>
+<authorUrl>http://www.mepro.co</authorUrl>
+<creationDate>06-Dec-2018</creationDate>
+<packagename>meprohr</packagename>
+<license>GNU/GPLv3 http://www.gnu.org/licenses/gpl-3.0.html</license>
+<version>2.1.2</version>
+<packager>WWW.MEPRO.CO</packager>
+<packagerurl>WWW.MEPRO.CO</packagerurl>
+<description>MEPRO Human Resource combining Hr component and Profile HR plugin</description>
+<files folder="packages">
+<file type="component" id="com_hr" >com_hr_v2.1.2.zip</file>
+<file type="plugin" id="profile_hr" group="user" >plg_profile_hr_v1.1.0.zip</file>
+</files>
+    <updateservers>
+        <server type="extension" priority="1" name="MEPRO Human Resource">https://www.mepro.co/updates/mhrcore.xml</server>
+    </updateservers>   	
+</extension>
+
+

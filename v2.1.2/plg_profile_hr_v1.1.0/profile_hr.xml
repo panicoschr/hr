@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension version="3.1" type="plugin" group="user" method="upgrade">
+	<name>PLG_PROFILE_HR</name>
+	 <author>MEPRO SOFTWARE SOLUTIONS</author>
+    <authorEmail>info@mepro.co</authorEmail>
+        <creationDate>28-May-2018</creationDate>
+    <authorUrl>http://www.mepro.co</authorUrl>
+    <copyright>WWW.MEPRO.CO - All rights reserved.</copyright>
+    <license>GNU/GPLv3 http://www.gnu.org/licenses/gpl-3.0.html</license>
+	<version>1.1.0</version>
+	<description>Human Resource Management System Plugin</description>
+	<files>
+		<filename plugin="profile_hr">profile_hr.php</filename>
+		<folder>profiles</folder>
+		<folder>fields</folder>
+	</files>
+	<languages>
+		<language tag="en-GB">en-GB.plg_user_profile_hr.ini</language>
+		<language tag="en-GB">en-GB.plg_user_profile_hr.sys.ini</language>
+	</languages>
+	<config>
+		<fields name="params">
+			<fieldset name="basic" addfieldpath="/administrator/components/com_content/models/fields">
+				<field name="register-require-user"
+					type="spacer"
+					class="text"
+					label="PLG_USER_PROFILE_HR_FIELD_NAME_REGISTER_REQUIRE_USER"
+				/>
+                                   
+		<field
+					name="register-require_tos"
+					type="list"
+					default="0"
+					label="PLG_USER_PROFILE_HR_FIELD_TOS_LABEL"
+					description="PLG_USER_PROFILE_HR_FIELD_TOS_DESC"
+				>
+					<option	value="2">JOPTION_REQUIRED</option>
+					<option	value="0">JDISABLED</option>
+				</field>
+                           
+                                
+				<field
+					name="register_tos_article"
+					type="modal_article"
+
+					label="PLG_USER_PROFILE_HR_FIELD_TOS_ARTICLE_LABEL"
+					description="PLG_USER_PROFILE_HR_FIELD_TOS_ARTICLE_DESC"
+				/>
+                                
+                                 
+                                
+				<field
+					name="register-require_dob"
+					type="list"
+
+					label="PLG_USER_PROFILE_HR_FIELD_DOB_LABEL"
+					description="PLG_USER_PROFILE_HR_FIELD_DOB_DESC">
+					<option	value="2">JOPTION_REQUIRED</option>
+					<option	value="1">JOPTION_OPTIONAL</option>
+					<option	value="0">JDISABLED</option>
+				</field>
+
+                                
+                                        
+				<field
+					name="register-require_approver"
+					type="list"
+
+					label="PLG_USER_PROFILE_HR_FIELD_APPROVER_LABEL"
+					description="PLG_USER_PROFILE_HR_FIELD_APPROVER_DESC">
+					<option	value="2">JOPTION_REQUIRED</option>
+					<option	value="1">JOPTION_OPTIONAL</option>
+					<option	value="0">JDISABLED</option>
+				</field>          
+                                
+				<field
+					name="register-require_applicant"
+					type="list"
+
+					label="PLG_USER_PROFILE_HR_FIELD_APPLICANT_LABEL"
+					description="PLG_USER_PROFILE_HR_FIELD_APPLICANT_DESC">
+					<option	value="2">JOPTION_REQUIRED</option>
+					<option	value="1">JOPTION_OPTIONAL</option>
+					<option	value="0">JDISABLED</option>
+				</field>                                     
+                                
+                                                                               
+                                                                                                                                  
+                                                                                                                                                                                                                                    
+				<field name="spacer1" type="spacer"
+					hr="true"
+				/>
+				<field name="profile-require-user" type="spacer" class="text"
+					label="PLG_USER_PROFILE_HR_FIELD_NAME_PROFILE_REQUIRE_USER"
+				/>
+                                
+                                <field name="profile-require_doj" type="list"
+                                        label="PLG_USER_PROFILE_HR_FIELD_DOJ_LABEL"
+					description="PLG_USER_PROFILE_HR_FIELD_DOJ_DESC"
+                                >
+                                    <option value="2">JOPTION_REQUIRED</option>
+                                    <option value="1">JOPTION_OPTIONAL</option>
+                                    <option value="0">JDISABLED</option>
+                                </field>
+                                
+                                 <field name="profile-require_dor" type="list"
+					label="PLG_USER_PROFILE_HR_FIELD_DOR_LABEL"
+					description="PLG_USER_PROFILE_HR_FIELD_DOR_DESC"
+                                >
+                                    <option value="2">JOPTION_REQUIRED</option>
+                                    <option value="1">JOPTION_OPTIONAL</option>
+                                    <option value="0">JDISABLED</option>
+                                </field>
+                                
+                                                                                         
+                
+				<field
+					name="profile-require_dob"
+					type="list"
+					label="PLG_USER_PROFILE_HR_FIELD_DOB_LABEL"
+					description="PLG_USER_PROFILE_HR_FIELD_DOB_DESC"
+				 >
+					<option	value="2">JOPTION_REQUIRED</option>
+					<option	value="1">JOPTION_OPTIONAL</option>
+					<option	value="0">JDISABLED</option>
+				</field>
+				<field
+					name="profile-require_approver"
+					type="list"
+					label="PLG_USER_PROFILE_HR_FIELD_APPROVER_LABEL"
+					description="PLG_USER_PROFILE_HR_FIELD_APPROVER_DESC"
+				 >
+					<option	value="2">JOPTION_REQUIRED</option>
+					<option	value="1">JOPTION_OPTIONAL</option>
+					<option	value="0">JDISABLED</option>
+				</field>         
+				<field
+					name="profile-require_applicant"
+					type="list"
+					label="PLG_USER_PROFILE_HR_FIELD_APPLICANT_LABEL"
+					description="PLG_USER_PROFILE_HR_FIELD_APPLICANT_DESC"
+				 >
+					<option	value="2">JOPTION_REQUIRED</option>
+					<option	value="1">JOPTION_OPTIONAL</option>
+					<option	value="0">JDISABLED</option>
+				</field>                                                            
+
+			</fieldset>
+
+		</fields>
+	</config>
+</extension>

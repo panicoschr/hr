@@ -1,0 +1,279 @@
+<?xml version="1.0" encoding="utf-8"?>
+<form>
+	<fields name="filter">
+		<field
+			name="search"
+			type="text"
+			label="COM_HR_FILTER_SEARCH_LABEL"
+			description="COM_HR_FILTER_SEARCH_DESC"
+			hint="JSEARCH_FILTER"
+		/>
+		<field
+			name="published"
+			type="status"
+			label="COM_HR_FILTER_PUBLISHED"
+			description="COM_HR_FILTER_PUBLISHED_DESC"
+			onchange="this.form.submit();"
+			>
+			<option value="">JOPTION_SELECT_PUBLISHED</option>
+		</field>
+		<field
+			name="category_id"
+			type="category"
+			label="JOPTION_FILTER_CATEGORY"
+			extension="com_hr"
+			description="JOPTION_FILTER_CATEGORY_DESC"
+			onchange="this.form.submit();"
+			published="0,1,2"
+			>
+			<option value="">JOPTION_SELECT_CATEGORY</option>
+		</field>
+
+
+        <field name="itemselected" type="list" 
+             onchange="this.form.submit();" 
+               label="Employee/Supervisor">
+            <option value="">- Employee/Supervisor -</option>             
+            <option value="employee">Employee</option>
+            <option value="supervisor">Supervisor</option>
+        </field>  
+
+
+
+ <field 
+         name="employee_id" 
+         type="Myuserandchildren" 
+          label="COM_HR_FIELD_EMPLOYEE_LABEL" 
+         description="COM_HR_FIELD_EMPLOYEE_DESC" 
+         onchange="this.form.submit();"
+        key_field="id"  value_field="name" 
+      > 
+             <option value="">- Select an Employee -</option>
+               
+      </field>           
+                     
+               
+        <field name="abstype" type="sql" 
+               label="COM_HR_FIELD_ABSENCE_LABEL" 
+             description="COM_HR_FIELD_ABSENCE_DESC"               
+         onchange="this.form.submit();"
+               query="SELECT distinct(abstype) AS abstype FROM #__hr_absence" 
+               key_field="abstype"  value_field="abstype" 
+        >   
+            <option value="">- Select an Absence Type -</option>
+        </field>                          
+                                 
+                                                   
+        <field name="abs_certification" type="list" 
+            onchange="this.form.submit();"
+            label="Certificate (Y/N)">
+            <option value="">- Certificate (Y/N) -</option>             
+            <option value="Y">Y</option>
+            <option value="N">N</option>
+        </field>                                  
+                              
+              
+        <field name="final_approval_status" 
+        type="list" label="Final Status of Request" 
+        onchange="this.form.submit();"
+        >
+            <option value="">- Final Approval Status -</option>                    
+            <option value="Pending">Pending</option>
+            <option value="Approved">Approved</option>
+            <option value="Rejected">Rejected</option>
+        </field>   
+        
+ 
+       <field name="charge_status" type="list"
+               onchange="this.form.submit();"
+          label="Charge Status of Request" 
+        >
+            <option value="">- Charge Status -</option>            
+            <option value="Pending">Pending</option>
+            <option value="Processing">Processing</option>
+            <option value="Completed">Completed</option>
+        </field>                                              
+                                                    
+                
+                
+		<field
+			name="access"
+			type="accesslevel"
+			label="JOPTION_FILTER_ACCESS"
+			description="JOPTION_FILTER_ACCESS_DESC"
+			onchange="this.form.submit();"
+			>
+			<option value="">JOPTION_SELECT_ACCESS</option>
+		</field>
+		<field
+                	name="author_id"
+                	type="author"
+                	label="COM_HR_FILTER_AUTHOR"
+                	description="COM_HR_FILTER_AUTHOR_DESC"
+                	onchange="this.form.submit();"
+                	>
+            		<option value="">JOPTION_SELECT_AUTHOR</option>
+        	</field>
+		<field
+			name="language"
+			type="contentlanguage"
+			label="JOPTION_FILTER_LANGUAGE"
+			description="JOPTION_FILTER_LANGUAGE_DESC"
+			onchange="this.form.submit();"
+			>
+			<option value="">JOPTION_SELECT_LANGUAGE</option>
+			<option value="*">JALL</option>
+		</field>
+                
+	  <!--	           
+		<field
+			name="tag"
+			type="tag"
+			mode="nested"
+			label="JOPTION_FILTER_TAG"
+			description="JOPTION_FILTER_TAG_DESC"
+			onchange="this.form.submit();"
+		>
+			<option value="">JOPTION_SELECT_TAG</option>
+		</field>
+                
+        -->        
+
+                                                                       
+                                                                                
+        <field
+            name="level"
+            type="integer"
+            first="1"
+            last="10"
+            step="1"
+            label="JOPTION_FILTER_LEVEL"
+            languages="*"
+            description="JOPTION_FILTER_LEVEL_DESC"
+            onchange="this.form.submit();"
+        >
+            <option value="">JOPTION_SELECT_MAX_LEVELS</option>
+        </field>
+    </fields>
+    <fields name="list">
+        <field
+            name="fullordering"
+            type="list"
+            label="COM_HR_LIST_FULL_ORDERING"
+            description="COM_HR_LIST_FULL_ORDERING_DESC"
+            onchange="this.form.submit();"
+            default="a.id DESC"
+        >
+            <option value="">JGLOBAL_SORT_BY</option>
+            <option value="a.ordering ASC">JGRID_HEADING_ORDERING_ASC</option>
+            <option value="a.ordering DESC">JGRID_HEADING_ORDERING_DESC</option>
+            <option value="a.state ASC">JSTATUS_ASC</option>
+            <option value="a.state DESC">JSTATUS_DESC</option>
+            <option value="a.featured ASC">JFEATURED_ASC</option>
+            <option value="a.featured DESC">JFEATURED_DESC</option>
+            <option value="category_title ASC">JCATEGORY_ASC</option>
+            <option value="category_title DESC">JCATEGORY_DESC</option>            
+            <!--     
+            <option value="a.title ASC">JGLOBAL_TITLE_ASC</option>
+            <option value="a.title DESC">JGLOBAL_TITLE_DESC</option>
+            -->      
+            
+            <option value="noofcalls ASC">COM_HR_FIELD_NOOFCALLS_LABEL_ASC</option>
+            <option value="noofcalls DESC">COM_HR_FIELD_NOOFCALLS_LABEL_DESC</option>      
+                        
+                                                                                          
+            <option value="accharge ASC">COM_HR_FIELD_ACCHARGE_LABEL_ASC</option>
+            <option value="accharge DESC">COM_HR_FIELD_ACCHARGE_LABEL_DESC</option>                   
+                    
+            
+            <option value="username ASC">COM_HR_FIELD_EMPLOYEE_LABEL_ASC</option>
+            <option value="username DESC">COM_HR_FIELD_EMPLOYEE_LABEL_DESC</option>                            
+                   
+            <option value="a.datetime_from ASC">COM_HR_FIELD_CHAR_FROM_LABEL_ASC</option>
+            <option value="a.datetime_from DESC">COM_HR_FIELD_CHAR_FROM_LABEL_DESC</option>
+                        
+            <option value="a.datetime_to ASC">COM_HR_FIELD_CHAR_TO_LABEL_ASC</option>
+            <option value="a.datetime_to DESC">COM_HR_FIELD_CHAR_TO_LABEL_DESC</option>                                                                                                                                                                                                                                                        
+                                 
+                                                                                              
+            <option value="d.abstype ASC">COM_HR_FIELD_ABSENCE_LABEL_ASC</option>
+            <option value="d.abstype DESC">COM_HR_FIELD_ABSENCE_LABEL_DESC</option>                                   
+                          
+             <option value="a.final_approval_status ASC">COM_HR_FIELD_FINAL_APPROVAL_STATUS_LABEL_ASC</option>
+            <option value="a.final_approval_status DESC">COM_HR_FIELD_FINAL_APPROVAL_STATUS_LABEL_DESC</option>      
+                          
+                       
+            <option value="a.charge_status ASC">COM_HR_FIELD_CHARGE_STATUS_LABEL_ASC</option>
+            <option value="a.charge_status DESC">COM_HR_FIELD_CHARGE_STATUS_LABEL_DESC</option>  
+                          
+                         
+                        
+            <option value="a.access ASC">JGRID_HEADING_ACCESS_ASC</option>
+            <option value="a.access DESC">JGRID_HEADING_ACCESS_DESC</option>
+                        
+            <option value="association ASC" requires="associations">JASSOCIATIONS_ASC</option>
+            <option value="association DESC" requires="associations">JASSOCIATIONS_DESC</option>
+                        
+            <option value="a.created_by ASC">JAUTHOR_ASC</option>
+            <option value="a.created_by DESC">JAUTHOR_DESC</option>
+                        
+            <option value="language ASC">JGRID_HEADING_LANGUAGE_ASC</option>
+            <option value="language DESC">JGRID_HEADING_LANGUAGE_DESC</option>
+                        
+            <option value="a.created ASC">JDATE_ASC</option>
+            <option value="a.created DESC">JDATE_DESC</option>
+            <!--         
+                   <option value="a.hits ASC">JGLOBAL_HITS_ASC</option>
+                   <option value="a.hits DESC">JGLOBAL_HITS_DESC</option>
+            -->      
+                                  
+                                  
+        
+                 
+                                   
+            <option value="a.approver1_id ASC">COM_HR_FIELD_APPROVER1_ID_ASC</option>
+            <option value="a.approver1_id DESC">COM_HR_FIELD_APPROVER1_ID_DESC</option>  
+            <option value="a.approval_status1 ASC">COM_HR_FIELD_APPROVAL_STATUS1_ASC</option>
+            <option value="a.approval_status1 DESC">COM_HR_FIELD_APPROVAL_STATUS1_DESC</option>                         
+                        
+                 
+            <option value="a.approver2_id ASC">COM_HR_FIELD_APPROVER2_ID_ASC</option>
+            <option value="a.approver2_id DESC">COM_HR_FIELD_APPROVER2_ID_DESC</option>      
+            <option value="a.approval_status2 ASC">COM_HR_FIELD_APPROVAL_STATUS2_ASC</option>
+            <option value="a.approval_status2 DESC">COM_HR_FIELD_APPROVAL_STATUS2_DESC</option>                           
+                        
+            <option value="a.approver3_id ASC">COM_HR_FIELD_APPROVER3_ID_ASC</option>
+            <option value="a.approver3_id DESC">COM_HR_FIELD_APPROVER3_ID_DESC</option> 
+            <option value="a.approval_status3 ASC">COM_HR_FIELD_APPROVAL_STATUS3_ASC</option>
+            <option value="a.approval_status3 DESC">COM_HR_FIELD_APPROVAL_STATUS3_DESC</option>   
+                        
+            <option value="a.approver4_id ASC">COM_HR_FIELD_APPROVER4_ID_ASC</option>
+            <option value="a.approver4_id DESC">COM_HR_FIELD_APPROVER4_ID_DESC</option>   
+            <option value="a.approval_status4 ASC">COM_HR_FIELD_APPROVAL_STATUS4_ASC</option>
+            <option value="a.approval_status4 DESC">COM_HR_FIELD_APPROVAL_STATUS4_DESC</option>                            
+                        
+            <option value="a.approver5_id ASC">COM_HR_FIELD_APPROVER5_ID_ASC</option>
+            <option value="a.approver5_id DESC">COM_HR_FIELD_APPROVER5_ID_DESC</option>     
+            <option value="a.approval_status5 ASC">COM_HR_FIELD_APPROVAL_STATUS5_ASC</option>
+            <option value="a.approval_status5 DESC">COM_HR_FIELD_APPROVAL_STATUS5_DESC</option>                                             
+                                                                                                                                                                                                  
+
+                        
+                                                                          
+            <option value="a.abs_certification ASC">COM_HR_FIELD_CERTIFICATION_LABEL_ASC</option>
+            <option value="a.abs_certification DESC">COM_HR_FIELD_CERTIFICATION_LABEL_DESC</option>                                                                                                                                                                                                                                               
+                                                                                                                                                          
+            <option value="a.id ASC">JGRID_HEADING_ID_ASC</option>
+            <option value="a.id DESC">JGRID_HEADING_ID_DESC</option>
+        </field>
+        <field
+            name="limit"
+            type="limitbox"
+            class="input-mini"
+            default="25"
+            label="COM_HR_LIST_LIMIT"
+            description="COM_HR_LIST_LIMIT_DESC"
+            onchange="this.form.submit();"
+        />
+    </fields>
+</form>

@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="component" version="4.0" method="upgrade">
+    <name>com_hr</name>
+    <creationDate>06-Dec-2018</creationDate>
+    <author>MEPRO SOFTWARE SOLUTIONS</author>
+    <authorEmail>info@mepro.co</authorEmail>
+    <authorUrl>http://www.mepro.co</authorUrl>
+    <copyright>WWW.MEPRO.CO - All rights reserved.</copyright>
+    <license>GNU/GPLv3 http://www.gnu.org/licenses/gpl-3.0.html</license>
+    <version>2.1.2</version>
+    <description>MEPRO Human Resource</description>
+    <scriptfile>script.php</scriptfile>
+    <install>
+        <sql>
+            <file driver="mysql" charset="utf8">sql/install.mysql.utf8.sql</file>		
+        </sql>
+    </install>
+    <uninstall>
+        <sql>
+            <file driver="mysql" charset="utf8">sql/uninstall.mysql.utf8.sql</file>			
+        </sql>
+    </uninstall>
+    <update>
+        <schemas>
+            <schemapath type="mysql">sql/updates/mysql</schemapath>
+        </schemas>
+    </update>        	
+    <files folder="site">
+        <filename>hr.php</filename>
+        <filename>controller.php</filename>
+        <filename>index.html</filename>		
+        <folder>helpers</folder>
+        <folder>models</folder>
+        <folder>controllers</folder>
+        <folder>views</folder>		
+    </files>
+    <media destination="com_hr" folder="media">
+        <filename>index.html</filename>
+        <folder>images</folder>
+        <folder>css</folder>
+        <folder>js</folder>
+    </media>	
+    <languages folder="site">
+        <language tag="en-GB">language/en-GB/en-GB.com_hr.ini</language>
+    </languages>
+    <administration>
+        <menu img="class:cpanel">com_hr</menu>
+
+        <files folder="admin">
+            <filename>access.xml</filename>
+            <filename>config.xml</filename>
+            <filename>hr.php</filename>
+            <filename>controller.php</filename>
+            <filename>index.html</filename>		
+            <filename>gpl-3.0.txt</filename>
+            <folder>controllers</folder>
+            <folder>sql</folder>			
+            <folder>helpers</folder>
+            <folder>models</folder>
+            <folder>tables</folder>
+            <folder>views</folder>
+        </files>
+        <languages folder="admin">
+            <language tag="en-GB">language/en-GB/en-GB.com_hr.ini</language>
+            <language tag="en-GB">language/en-GB/en-GB.com_hr.sys.ini</language>
+        </languages>
+    </administration>
+</extension>
+
+
